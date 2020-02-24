@@ -17,6 +17,7 @@ public class Question {
 		GENERAL,
 		FLIRTY,
 		DIRTY,
+		ANY,
 	}
 	
 	public String getData() {

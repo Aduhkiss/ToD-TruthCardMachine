@@ -156,11 +156,15 @@ public class QuestionManager {
 		Random r = new Random();
 		int i = r.nextInt(questions.size());
 		Question q = questions.get(i);
-		if(q.getType() == type) {
+		if(type != QuestionType.ANY) {
+			if(q.getType() == type) {
+				return q;
+			}
+			else {
+				return getQuestion(type);
+			}
+		} else {
 			return q;
-		}
-		else {
-			return getQuestion(type);
 		}
 	}
 }

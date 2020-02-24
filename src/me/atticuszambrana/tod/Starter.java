@@ -16,7 +16,8 @@ public class Starter {
 	}
 	
 	private static void game(AtticusInput input) {
-		System.out.println("You need to pick a question type. The ones to choose from are: General, Embarressing, Funny, Friendship, Flirty, Dirty");
+		
+		System.out.println("You need to pick a question type. The ones to choose from are: General, Embarressing, Funny, Friendship, Flirty, Dirty, Any");
 		System.out.println("Please type which one you would like...");
 		
 		QuestionType type = null;
@@ -28,11 +29,16 @@ public class Starter {
 			System.exit(0);
 		}
 		
+		for(int i = 0; i < 100; i++) {
+			System.out.println("\n\n");
+		}
+		
 		System.out.println("Searching through the deck...\n");
 		
 		Question q = QuestionManager.getQuestion(type);
 		
 		System.out.println("=================================================");
+		System.out.println("I picked from the: " + q.getType().toString().toUpperCase() + " deck");
 		System.out.println(q.getData());
 		System.out.println("=================================================");
 		
